@@ -3,26 +3,25 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
-    margin: 0;
+    margin: 100px 0 0 0 ;
     background-color: #f0f0f0;/* Agrega una perspectiva para el efecto 3D */
     padding: 0 300px;
+}
+
+section {
+    margin: 100px 0;
 }
 
 h1 {
     margin-bottom: 24px;
 }
 
-p {
-    font-size: 24px
-}
-
 .izq {
-    animation: izquierda 0.8s forwards;
+    animation: izquierda 0.8s ;
 }
 
 .der {
-    animation: derecha 0.8s forwards;
+    animation: derecha 0.8s ;
 }
 
 @keyframes izquierda {
@@ -45,4 +44,98 @@ p {
         transform: translateX(0px);
         opacity: 1;
     }
+}
+
+.escenario {
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.cubo {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: rotar 6s infinite linear;
+}
+
+.cara {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 150, 136, 0.8);
+    border: 1px solid #004d40;
+}
+
+/* Define las caras del cubo */
+.cara1 { transform: rotateY(0deg) translateZ(100px); }
+.cara2 { transform: rotateY(90deg) translateZ(100px); }
+.cara3 { transform: rotateY(180deg) translateZ(100px); }
+.cara4 { transform: rotateY(-90deg) translateZ(100px); }
+.cara5 { transform: rotateX(90deg) translateZ(100px); }
+.cara6 { transform: rotateX(-90deg) translateZ(100px); }
+
+/* Animación de rotación */
+@keyframes rotar {
+    from {
+        transform: rotateX(0) rotateY(0);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+.animado {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    animation: moverYRotar 5s infinite;
+}
+
+@keyframes moverYRotar {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(100px, 0) rotate(90deg);
+    }
+    50% {
+        transform: translate(100px, 100px) rotate(180deg);
+    }
+    75% {
+        transform: translate(0, 100px) rotate(270deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+
+.boton {
+    padding: 15px 30px;
+    font-size: 16px;
+    color: white;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
+
+
+.cuadro {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    transition: transform 0.5s ease; /* Transición para la transformación */
+}
+
+.cuadro:hover {
+    transform: scale(1.5) rotate(45deg) translateX(50px) translateY(50px);
 }
