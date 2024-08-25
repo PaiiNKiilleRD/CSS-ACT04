@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;/* Agrega una perspectiva para el efecto 3D */
+    padding: 0 300px;
+}
+
+h1 {
+    margin-bottom: 24px;
+}
+
+.izq {
+    animation: izquierda 0.8s forwards;
+}
+
+.der {
+    animation: derecha 0.8s forwards;
+}
+
+@keyframes izquierda {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes derecha {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
