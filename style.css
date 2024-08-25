@@ -13,6 +13,10 @@ h1 {
     margin-bottom: 24px;
 }
 
+p {
+    font-size: 24px
+}
+
 .izq {
     animation: izquierda 0.8s forwards;
 }
