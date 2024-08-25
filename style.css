@@ -57,7 +57,11 @@ h1 {
     height: 100%;
     position: absolute;
     transform-style: preserve-3d;
-    animation: rotar 6s infinite linear;
+   
+}
+
+.cubo:hover {
+    animation: rotar 1s forwards;
 }
 
 .cara {
@@ -70,11 +74,7 @@ h1 {
 
 /* Define las caras del cubo */
 .cara1 { transform: rotateY(0deg) translateZ(100px); }
-.cara2 { transform: rotateY(90deg) translateZ(100px); }
-.cara3 { transform: rotateY(180deg) translateZ(100px); }
-.cara4 { transform: rotateY(-90deg) translateZ(100px); }
-.cara5 { transform: rotateX(90deg) translateZ(100px); }
-.cara6 { transform: rotateX(-90deg) translateZ(100px); }
+
 
 /* Animación de rotación */
 @keyframes rotar {
@@ -82,7 +82,7 @@ h1 {
         transform: rotateX(0) rotateY(0);
     }
     to {
-        transform: rotateX(360deg) rotateY(360deg);
+        transform: rotateX(35deg) rotateY(35deg);
     }
 }
 
@@ -90,25 +90,21 @@ h1 {
     width: 100px;
     height: 100px;
     background-color: #3498db;
-    animation: moverYRotar 5s infinite;
+    
+}
+
+.animado:hover {
+    animation: moverYRotar 1s forwards;
 }
 
 @keyframes moverYRotar {
-    0% {
+    from {
         transform: translate(0, 0) rotate(0deg);
     }
-    25% {
+    to {
         transform: translate(100px, 0) rotate(90deg);
     }
-    50% {
-        transform: translate(100px, 100px) rotate(180deg);
-    }
-    75% {
-        transform: translate(0, 100px) rotate(270deg);
-    }
-    100% {
-        transform: translate(0, 0) rotate(360deg);
-    }
+   
 }
 
 
@@ -133,7 +129,7 @@ h1 {
     width: 100px;
     height: 100px;
     background-color: #3498db;
-    transition: transform 0.5s ease; /* Transición para la transformación */
+    transition: transform 0.5s ease;
 }
 
 .cuadro:hover {
